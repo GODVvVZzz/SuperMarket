@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D2790488-DA89-4FB1-8A96-86E017047523}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SuperMarket</RootNamespace>
+    <AssemblyName>SuperMarket</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>supermarket_128px_1226936_easyicon.net.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSkin">
+      <HintPath>..\..\..\CSkin 16.1.14.3\CSkin 16.1.14.3\CSkin 4.0\CSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="DLLFullPrint">
+      <HintPath>..\..\..\MarketMS-master\DLLFullPrint.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.Office.Interop.Excel\15.0.0.0__71e9bce111e9429c\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\软件\mysql-connector-net-8.0.18-noinstall\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="zxing, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.6\lib\net47\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.6\lib\net47\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseClass\DBConn.cs" />
+    <Compile Include="UI\FrmForget.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmForget.Designer.cs">
+      <DependentUpon>FrmForget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmGoods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmGoods.Designer.cs">
+      <DependentUpon>FrmGoods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmGoodsCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmGoodsCategory.Designer.cs">
+      <DependentUpon>FrmGoodsCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmGoodsSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmGoodsSupplier.Designer.cs">
+      <DependentUpon>FrmGoodsSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmGoodsSupplierList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmGoodsSupplierList.Designer.cs">
+      <DependentUpon>FrmGoodsSupplierList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\FrmNEGoods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmNEGoods.Designer.cs">
+      <DependentUpon>FrmNEGoods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmNEGoodsCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmNEGoodsCategory.Designer.cs">
+      <DependentUpon>FrmNEGoodsCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmNEGoodsSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmNEGoodsSupplier.Designer.cs">
+      <DependentUpon>FrmNEGoodsSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmNEPurchaseOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmNEPurchaseOrder.Designer.cs">
+      <DependentUpon>FrmNEPurchaseOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmPayWithAlipay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmPayWithAlipay.Designer.cs">
+      <DependentUpon>FrmPayWithAlipay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmRefundWithAlipay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmRefundWithAlipay.Designer.cs">
+      <DependentUpon>FrmRefundWithAlipay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UFrmCgjh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UFrmCgjh.Designer.cs">
+      <DependentUpon>UFrmCgjh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UFrmDqkc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UFrmDqkc.Designer.cs">
+      <DependentUpon>UFrmDqkc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UFrmGkth.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UFrmGkth.Designer.cs">
+      <DependentUpon>UFrmGkth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UFrmLsjyjl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UFrmLsjyjl.Designer.cs">
+      <DependentUpon>UFrmLsjyjl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UFrmSpxx.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UFrmSpxx.Designer.cs">
+      <DependentUpon>UFrmSpxx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UFrmSyt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UFrmSyt.Designer.cs">
+      <DependentUpon>UFrmSyt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UFrmXsph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UFrmXsph.Designer.cs">
+      <DependentUpon>UFrmXsph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UFrmYgxxgl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UFrmYgxxgl.Designer.cs">
+      <DependentUpon>UFrmYgxxgl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\FrmForget.resx">
+      <DependentUpon>FrmForget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmGoods.resx">
+      <DependentUpon>FrmGoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmGoodsCategory.resx">
+      <DependentUpon>FrmGoodsCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmGoodsSupplier.resx">
+      <DependentUpon>FrmGoodsSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmGoodsSupplierList.resx">
+      <DependentUpon>FrmGoodsSupplierList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\FrmNEGoods.resx">
+      <DependentUpon>FrmNEGoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmNEGoodsCategory.resx">
+      <DependentUpon>FrmNEGoodsCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmNEGoodsSupplier.resx">
+      <DependentUpon>FrmNEGoodsSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmNEPurchaseOrder.resx">
+      <DependentUpon>FrmNEPurchaseOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmPayWithAlipay.resx">
+      <DependentUpon>FrmPayWithAlipay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmRefundWithAlipay.resx">
+      <DependentUpon>FrmRefundWithAlipay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UFrmCgjh.resx">
+      <DependentUpon>UFrmCgjh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UFrmDqkc.resx">
+      <DependentUpon>UFrmDqkc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UFrmGkth.resx">
+      <DependentUpon>UFrmGkth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UFrmLsjyjl.resx">
+      <DependentUpon>UFrmLsjyjl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UFrmSpxx.resx">
+      <DependentUpon>UFrmSpxx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UFrmSyt.resx">
+      <DependentUpon>UFrmSyt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UFrmXsph.resx">
+      <DependentUpon>UFrmXsph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UFrmYgxxgl.resx">
+      <DependentUpon>UFrmYgxxgl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="supermarket_128px_1226936_easyicon.net.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
